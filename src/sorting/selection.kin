@@ -1,0 +1,28 @@
+reka i = 0 reka j; reka min_idx;
+reka arr = [34, 56, 23, 45, 34, 57]
+
+porogaramu_ntoya hinduranya(arr, min_idx, i) {
+  reka temp = arr[min_idx]
+  arr[min_idx] = arr[i]
+  arr[i] = temp
+}
+
+subiramo_niba (i <= KIN_URUTONDE.ingano(arr) - 1) {
+  min_idx = i
+  j = i + 1
+  subiramo_niba(j < KIN_URUTONDE.ingano(arr)) {
+    niba (arr[j] < arr[min_idx]) {
+      min_idx = j
+    }
+    j = j + 1
+  }
+
+  hinduranya(arr, min_idx, i)
+  i = i + 1
+}
+
+i = 0
+subiramo_niba (i < KIN_URUTONDE.ingano(arr)) {
+  tangaza_amakuru(arr[i])
+  i = i + 1
+}

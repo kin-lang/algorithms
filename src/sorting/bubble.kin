@@ -1,0 +1,38 @@
+# Bubble sort in Kin Programming Language.
+
+reka urutonde_rwi_imibare = []
+reka umubare_wimibare = injiza_amakuru("Uratanga imibare ingahe? ")
+
+reka i = 1
+reka j = 0
+
+subiramo_niba(i <= umubare_wimibare) {
+  reka umubare = injiza_amakuru("Shyiramo umubare: ")
+  KIN_URUTONDE.ongera_kumusozo(urutonde_rwi_imibare, umubare)
+  i = i + 1
+}
+
+
+# Sort the arr of numbers by using bubble sort algorithm.
+i = 0
+
+subiramo_niba(i < umubare_wimibare) {
+  j = 0
+  subiramo_niba(j < umubare_wimibare - i - 1) {
+    niba(urutonde_rwi_imibare[j] > urutonde_rwi_imibare[j + 1]) {
+      reka ububiko_bwagateganyo = urutonde_rwi_imibare[j]
+      urutonde_rwi_imibare[j] = urutonde_rwi_imibare[j + 1]
+      urutonde_rwi_imibare[j + 1] = ububiko_bwagateganyo
+    }
+    j = j + 1
+  }
+  i = i + 1
+}
+
+# Print the sorted array.
+i = 0
+
+subiramo_niba(i < umubare_wimibare) {
+  tangaza_amakuru(urutonde_rwi_imibare[i])
+  i = i + 1
+}
