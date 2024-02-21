@@ -1,0 +1,13 @@
+reka arr = [45, 56, 334, 78, 34, 78, 23, 90]
+
+reka i = 0
+
+reka key = 23
+
+subiramo_niba(i < KIN_URUTONDE.ingano(arr)) {
+  niba (arr[i] == key) {
+    tangaza_amakuru("Key ", key, " is on ", i + 1, " position")
+  }
+
+  i = i + 1
+}
