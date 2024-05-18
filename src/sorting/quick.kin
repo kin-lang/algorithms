@@ -1,0 +1,39 @@
+reka urutonde_rwi_imibare = []
+
+porogaramu_ntoya igabanye(urutonde_rwi_imibare, hasi, hejuru) {
+  reka pivot = urutonde_rwi_imibare[hejuru]
+  reka i = hasi - 1
+
+  reka j = hasi
+  subiramo_niba(j < hejuru) {
+    niba(urutonde_rwi_imibare[j] <= pivot) {
+      i = i + 1
+      reka ububiko_bwagateganyo = urutonde_rwi_imibare[i]
+      urutonde_rwi_imibare[i] = urutonde_rwi_imibare[j]
+      urutonde_rwi_imibare[j] = ububiko_bwagateganyo
+    }
+    j = j + 1
+  }
+  reka ububiko_bwagateganyo = urutonde_rwi_imibare[i + 1]
+  urutonde_rwi_imibare[i + 1] = urutonde_rwi_imibare[hejuru]
+  urutonde_rwi_imibare[hejuru] = ububiko_bwagateganyo
+  tanga i + 1
+}
+
+porogaramu_ntoya quick_sort(urutonde_rwi_imibare, hasi, hejuru) {
+  niba(hasi < hejuru) {
+    reka pivot_index = igabanye(urutonde_rwi_imibare, hasi, hejuru)
+    quick_sort(urutonde_rwi_imibare, hasi, pivot_index - 1)
+    quick_sort(urutonde_rwi_imibare, pivot_index + 1, hejuru)
+  }
+}
+
+reka hasi = 0
+reka hejuru = KIN_URUTONDE.ingano(urutonde_rwi_imibare) - 1
+quick_sort(urutonde_rwi_imibare, hasi, hejuru)
+
+reka i = 0
+subiramo_niba(i < KIN_URUTONDE.ingano(urutonde_rwi_imibare)) {
+  tangaza_amakuru(urutonde_rwi_imibare[i])
+  i = i + 1
+}
